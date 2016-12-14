@@ -17,6 +17,8 @@
 # include <unistd.h>
 # include <string.h>
 
+# define HEX_DIGITS "0123456789ABCDEF"
+
 typedef struct	s_list
 {
 	void			*content;
@@ -94,5 +96,6 @@ int				ft_abs(int n);
 int				ft_sqrt(int nb);
 void    		ft_print_binary(unsigned char octet);
 void			ft_lstfree(void *content, size_t size);
+char		    *ft_itoa_base(int value, int base);
 
 #endif
