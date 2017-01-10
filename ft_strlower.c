@@ -16,6 +16,7 @@ void	ft_strlower(char *s)
 {
 	int i;
 
+	i = 0;
 	while (s[i] != 0)
 	{
 		if (ft_isupper(s[i]))
