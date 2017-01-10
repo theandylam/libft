@@ -25,7 +25,8 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 		ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c \
 		ft_lstmap.c ft_lstaddback.c ft_lstprintstr.c ft_abs.c ft_sqrt.c \
-		ft_print_binary.c ft_lstfree.c ft_itoa_base.c ft_putlong.c
+		ft_print_binary.c ft_lstfree.c ft_itoa_base.c ft_putlong.c \
+		ft_putlong_u.c ft_itoa_base_long.c ft_strlower.c ft_strupper.c
 
 OBJECTS = $(FILES:.c=.o)
 
