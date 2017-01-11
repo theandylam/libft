@@ -102,5 +102,7 @@ void			ft_putlong_u(unsigned long n);
 char			*ft_itoa_base_long(long value, long base);
 void			ft_strupper(char *s);
 void			ft_strlower(char *s);
+void			ft_putwchar(wchar_t c);
+void			ft_puwtstr(wchar_t const *s);
 
 #endif
