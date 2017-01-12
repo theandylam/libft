@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_puwtstr(wchar_t const *s)
+void	ft_putwstr(wchar_t const *s)
 {
 	int i;
 
