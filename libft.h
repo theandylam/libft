@@ -100,6 +100,7 @@ char		    *ft_itoa_base(int value, int base);
 void			ft_putlong(long n);
 void			ft_putlong_u(unsigned long n);
 char			*ft_itoa_base_long(long value, long base);
+char			*ft_itoa_base_longlong(long long value, int base);
 void			ft_strupper(char *s);
 void			ft_strlower(char *s);
 void			ft_putwchar(wchar_t c);
