@@ -12,13 +12,13 @@
 
 #include "libft.h"
 
-static int	output_len(int value, int base)
+static int	output_len(long long value, int base)
 {
 	int				i;
-	unsigned int	u_val;
+	unsigned long long	u_val;
 
 	i = 0;
-	u_val = (unsigned int)value;
+	u_val = (unsigned long long)value;
 	if (value == 0)
 		return (1);
 	if (value < 0 && base != 10)
@@ -40,7 +40,7 @@ static int	output_len(int value, int base)
 	return (i);
 }
 
-static void	neg_check(int *value, int base, int *neg_flag, int *len)
+static void	neg_check(long long *value, int base, int *neg_flag, int *len)
 {
 	if (base == 10 && *value < 0)
 	{
@@ -57,7 +57,7 @@ static void	neg_check(int *value, int base, int *neg_flag, int *len)
 		*value *= -1;
 }
 
-static char	*fill_loop(int value, int base, int len, int neg_flag)
+static char	*fill_loop(long long value, int base, int len, int neg_flag)
 {
 	int		i;
 	int		int_min;
@@ -86,7 +86,7 @@ static char	*fill_loop(int value, int base, int len, int neg_flag)
 	return (output);
 }
 
-static char	*u_fill_loop(unsigned int value, int base, int len, int neg_flag)
+static char	*u_fill_loop(unsigned long long val, int base, int len, int neg)
 {
 	int		i;
 	int		int_min;
@@ -95,18 +95,18 @@ static char	*u_fill_loop(unsigned int value, int base, int len, int neg_flag)
 
 	i = 0;
 	digit = HEX_DIGITS;
-	int_min = neg_flag > 1 ? 1 : 0;
-	if (neg_flag > 1)
-		neg_flag = 1;
-	output = (char *)malloc(sizeof(char) * len + 1 + neg_flag);
+	int_min = neg > 1 ? 1 : 0;
+	if (neg > 1)
+		neg = 1;
+	output = (char *)malloc(sizeof(char) * len + 1 + neg);
 	while (i < len)
 	{
-		output[len - i - 1] = digit[value % base];
-		value /= base;
+		output[len - i - 1] = digit[val % base];
+		val /= base;
 		i++;
 	}
 	output[i] = 0;
-	if (neg_flag)
+	if (neg)
 	{
 		output[0] = '-';
 		if (int_min == 1)
@@ -115,12 +115,12 @@ static char	*u_fill_loop(unsigned int value, int base, int len, int neg_flag)
 	return (output);
 }
 
-char		*ft_itoa_base(int value, int base)
+char		*ft_itoa_base(long long value, int base)
 {
 	int		neg_flag;
 	char	*output;
 	int		len;
-	int		val;
+	long long	val;
 
 	neg_flag = 0;
 	val = value;

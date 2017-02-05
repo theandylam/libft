@@ -96,14 +96,13 @@ int				ft_abs(int n);
 int				ft_sqrt(int nb);
 void    		ft_print_binary(unsigned char octet);
 void			ft_lstfree(void *content, size_t size);
-char		    *ft_itoa_base(int value, int base);
+char			*ft_itoa_base(long long value, int base);
 void			ft_putlong(long n);
 void			ft_putlong_u(unsigned long n);
-char			*ft_itoa_base_long(long value, long base);
-char			*ft_itoa_base_longlong(long long value, int base);
 void			ft_strupper(char *s);
 void			ft_strlower(char *s);
 void			ft_putwchar(wchar_t c);
 void			ft_putwstr(wchar_t const *s);
+int				ft_putnstr(char const *s, int n);
 
 #endif
