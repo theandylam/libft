@@ -105,5 +105,6 @@ void			ft_putwchar(wchar_t c);
 void			ft_putwstr(wchar_t const *s);
 int				ft_putnstr(char const *s, int n);
 int				ft_putnwstr(wchar_t const *s, int n);
+size_t			ft_wstrlen(const wchar_t *s);
 
 #endif
