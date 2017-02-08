@@ -45,7 +45,7 @@ static void	neg_check(long long *value, int base, int *neg_flag, int *len)
 	if (base == 10 && *value < 0)
 	{
 		*neg_flag = 1;
-		if (*value == -2147483648)
+		if (*value == -9223372036854775807-1)
 		{
 			*value += 1;
 			*neg_flag += 1;
