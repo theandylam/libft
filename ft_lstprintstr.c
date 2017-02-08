@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstprintstr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alam <marvin@42.fr>                        +#+  +:+       +#+        */
+/*   By: alam <theandylam@gmail.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 14:45:01 by alam              #+#    #+#             */
 /*   Updated: 2016/11/10 14:45:03 by alam             ###   ########.fr       */
