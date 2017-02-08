@@ -12,7 +12,8 @@
 
 #include "libft.h"
 
-void	ft_putwchar(wchar_t c)
+int	ft_putwchar(wchar_t c)
 {
 	write(1, &c, MB_CUR_MAX);
+	return (1);
 }
