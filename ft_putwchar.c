@@ -27,7 +27,7 @@ static int	get_size(wchar_t c)
 static void	write_unicode_header(wchar_t c, int size)
 {
 	unsigned int shift;
-	
+
 	shift = (size - 1) * 6;
 	if (size == 4)
 		ft_putchar(UHEAD_4 + ((c & (UMASK_4 << shift)) >> shift));
@@ -35,6 +35,8 @@ static void	write_unicode_header(wchar_t c, int size)
 		ft_putchar(UHEAD_3 + ((c & (UMASK_3 << shift)) >> shift));
 	else if (size == 2)
 		ft_putchar(UHEAD_2 + ((c & (UMASK_2 << shift)) >> shift));
+	else
+		ft_putchar(c & UMASK_1);
 }
 
 static void	write_unicode_data(wchar_t c, int size)
@@ -56,5 +58,5 @@ int	ft_putwchar(wchar_t c)
 	size = get_size(c);
 	write_unicode_header(c, size);
 	write_unicode_data(c, size);
-	return (1);
+	return (size);
 }

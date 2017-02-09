@@ -15,14 +15,16 @@
 int	ft_putwstr(wchar_t const *s)
 {
 	int i;
+	int size;
 
 	if (s == NULL)
 		return (0);
 	i = 0;
+	size = 0;
 	while (s[i] != '\0')
 	{
-		ft_putwchar(s[i]);
+		size += ft_putwchar(s[i]);
 		i++;
 	}
-	return (i);
+	return (size);
 }
