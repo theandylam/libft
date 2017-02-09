@@ -27,8 +27,7 @@ static int	get_size(wchar_t c)
 static void	write_unicode_header(wchar_t c, int size)
 {
 	unsigned int shift;
-	unsigned char temp = 0;
-
+	
 	shift = (size - 1) * 6;
 	if (size == 4)
 		ft_putchar(UHEAD_4 + ((c & (UMASK_4 << shift)) >> shift));
