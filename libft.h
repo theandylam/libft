@@ -19,6 +19,15 @@
 
 # define HEX_DIGITS "0123456789ABCDEF"
 
+# define UDATA 0b10000000
+# define UDATA_MASK 0b00111111
+# define UHEAD_2 0b11000000
+# define UMASK_2 0b00011111
+# define UHEAD_3 0b11100000
+# define UMASK_3 0b00001111
+# define UHEAD_4 0b11110000
+# define UMASK_4 0b00000111
+
 typedef struct	s_list
 {
 	void			*content;
