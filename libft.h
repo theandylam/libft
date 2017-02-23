@@ -16,8 +16,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <string.h>
+# include <fcntl.h>
 
 # define HEX_DIGITS "0123456789ABCDEF"
+
+# define GNL_BUFFER 256
 
 # define UDATA 0b10000000
 # define UDATA_MASK 0b00111111
@@ -35,6 +38,12 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_file
+{
+	int		fc;
+	char	leftover[GNL_BUFFER];
+}				t_file;
 
 int				ft_atoi(const char *str);
 int				ft_isalnum(int c);
@@ -104,7 +113,7 @@ void			ft_lstprintstr(t_list **lst);
 
 int				ft_abs(int n);
 int				ft_sqrt(int nb);
-void    		ft_print_binary(unsigned char octet);
+void			ft_print_binary(unsigned char octet);
 void			ft_lstfree(void *content, size_t size);
 char			*ft_itoa_base(long long value, int base);
 void			ft_putlong(long n);
@@ -116,6 +125,11 @@ int				ft_putwstr(wchar_t const *s);
 int				ft_putnstr(char const *s, int n);
 int				ft_putnwstr(wchar_t const *s, int n);
 size_t			ft_wstrlen(const wchar_t *s);
+size_t			ft_wstrsize(const wchar_t *s);
 char			*ft_itoa_base_u(unsigned long long value, int base);
+size_t			ft_wstrnsize(const wchar_t *s, size_t max);
+
+int				get_next_line(const int fd, char **line);
+
 
 #endif

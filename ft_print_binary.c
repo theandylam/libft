@@ -12,22 +12,20 @@
 
 #include "libft.h"
 
-void    ft_print_binary(unsigned char octet)
+void	ft_print_binary(unsigned char octet)
 {
-	int i;
-	char bits[9];
+	int		i;
+	char	bits[9];
 
 	i = 0;
-
-	while ( i < 8 )
+	while (i < 8)
 	{
-		if ( octet & (1 << i) )
+		if (octet & (1 << i))
 			bits[7 - i] = '1';
 		else
 			bits[7 - i] = '0';
 		i++;
 	}
 	bits[8] = 0;
-
 	ft_putstr(bits);
 }

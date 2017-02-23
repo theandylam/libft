@@ -14,7 +14,7 @@
 
 static int	output_len(long long value, int base)
 {
-	int				i;
+	int					i;
 	unsigned long long	u_val;
 
 	i = 0;
@@ -45,7 +45,7 @@ static void	neg_check(long long *value, int base, int *neg_flag, int *len)
 	if (base == 10 && *value < 0)
 	{
 		*neg_flag = 1;
-		if (*value == -9223372036854775807-1)
+		if (*value == -9223372036854775807 - 1)
 		{
 			*value += 1;
 			*neg_flag += 1;
@@ -117,9 +117,9 @@ static char	*u_fill_loop(unsigned long long val, int base, int len, int neg)
 
 char		*ft_itoa_base(long long value, int base)
 {
-	int		neg_flag;
-	char	*output;
-	int		len;
+	int			neg_flag;
+	char		*output;
+	int			len;
 	long long	val;
 
 	neg_flag = 0;

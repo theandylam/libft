@@ -15,13 +15,13 @@
 static int	get_size(wchar_t c)
 {
 	if (c <= 0x7F)
-		return 1;
+		return (1);
 	else if (c <= 0x7FF)
-		return 2;
+		return (2);
 	else if (c <= 0xFFFF)
-		return 3;
+		return (3);
 	else
-		return 4;
+		return (4);
 }
 
 static void	write_unicode_header(wchar_t c, int size)
@@ -46,17 +46,24 @@ static void	write_unicode_data(wchar_t c, int size)
 	i = size - 2;
 	while (i >= 0)
 	{
-		ft_putchar(UDATA + ((c & (UDATA_MASK << (i * 6) ) ) >> (i * 6)) );
+		ft_putchar(UDATA + ((c & (UDATA_MASK << (i * 6))) >> (i * 6)));
 		i--;
 	}
 }
 
-int	ft_putwchar(wchar_t c)
+int			ft_putwchar(wchar_t c)
 {
 	int size;
 
-	size = get_size(c);
-	write_unicode_header(c, size);
-	write_unicode_data(c, size);
+	if (MB_CUR_MAX > 1)
+	{
+		size = get_size(c);
+		write_unicode_header(c, size);
+		write_unicode_data(c, size);
+	}
+	else
+	{
+		return (ft_putchar(c));
+	}
 	return (size);
 }

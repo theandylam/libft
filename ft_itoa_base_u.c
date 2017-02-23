@@ -14,7 +14,7 @@
 
 static int	output_len(unsigned long long value, int base)
 {
-	int				i;
+	int	i;
 
 	i = 0;
 	if (value == 0)
@@ -51,8 +51,8 @@ static char	*fill_loop(unsigned long long val, int base, int len)
 
 char		*ft_itoa_base_u(unsigned long long value, int base)
 {
-	char	*output;
-	int		len;
+	char				*output;
+	int					len;
 	unsigned long long	val;
 
 	val = value;
@@ -60,4 +60,3 @@ char		*ft_itoa_base_u(unsigned long long value, int base)
 	output = fill_loop(val, base, len);
 	return (output);
 }
-
