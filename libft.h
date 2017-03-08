@@ -131,5 +131,8 @@ size_t			ft_wstrnsize(const wchar_t *s, size_t max);
 
 int				get_next_line(const int fd, char **line);
 
+void			ft_freesplit(char **str);
+
+
 
 #endif
