@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <string.h>
 # include <fcntl.h>
+# include "ft_printf/ft_printf.h"
 
 # define HEX_DIGITS "0123456789ABCDEF"
 
@@ -133,6 +134,7 @@ int				get_next_line(const int fd, char **line);
 
 void			ft_freesplit(char **str);
 
+int				ft_printf(const char *format, ...);
 
 
 #endif

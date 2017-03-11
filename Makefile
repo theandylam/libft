@@ -12,6 +12,10 @@
 
 NAME = libft.a
 
+FT_PRINTF = ft_printf.c conversion_analyze.c number_functions.c get_mods.c \
+				print_string.c parse_argument.c number_output_handler.c \
+				number_functions2.c string_output_handler.c print_number.c
+
 FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_isdigit.c ft_islower.c ft_isprint.c ft_isupper.c ft_iswhtspc.c \
 		ft_itoa.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c \
@@ -28,9 +32,9 @@ FILES = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 		ft_print_binary.c ft_lstfree.c ft_itoa_base.c ft_wstrsize.c\
 		ft_strlower.c ft_strupper.c ft_putwchar.c ft_itoa_base_u.c \
 		ft_putwstr.c ft_putnstr.c ft_putnwstr.c ft_wstrlen.c get_next_line.c\
-		ft_freesplit.c
+		ft_freesplit.c ft_wstrnsize.c
 
-OBJECTS = $(FILES:.c=.o)
+OBJECTS = $(FILES:.c=.o) $(addprefix ft_printf/, $(FT_PRINTF:.c=.o))
 
 CFLAGS = -Wall -Wextra -Werror
 
