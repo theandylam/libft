@@ -78,7 +78,7 @@ char			**ft_strsplit(char const *s, char c)
 		word_found = 1;
 	else
 		word_found = 0;
-	out = (char **)malloc(sizeof(char *) * (count_words(s, c) + 1));
+	out = (char **)ft_memalloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (out != NULL)
 		fill_array(out, s, c, word_found);
 	return (out);
